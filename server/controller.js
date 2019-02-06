@@ -80,10 +80,10 @@ const resetGame = function(req, res) {
   try {
     const { playerName } = req.body;
     gameInstances.set(playerName, new Game());
-    res.json({ sucess: true });
+    res.json({ success: true });
   } catch (error) {
     console.log(error);
-    res.json({ sucess: false });
+    res.json({ success: false });
   }
 };
 

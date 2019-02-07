@@ -22,7 +22,7 @@
         />
         <button type="submit">Submit</button>
       </form>
-      <button v-on:click="resetGame">Reset Game</button>
+      <button @click="resetGame">Reset Game</button>
       <h2 v-if="lost" class="gameover-message">GAME OVER</h2>
       <h2
         class="message"

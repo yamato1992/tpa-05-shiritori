@@ -22,6 +22,7 @@
         />
         <button type="submit">Submit</button>
       </form>
+      <button @click="resetGame">Reset Game</button>
       <h2 v-if="lost" class="gameover-message">GAME OVER</h2>
       <h2
         class="message"
@@ -89,6 +90,15 @@ export default {
     },
     endGame: function() {
       this.lost = true;
+    },
+    resetGame: function() {
+      apiService.resetGame(this.playerName)
+        .then((resp) => {
+          if (resp.success) {
+            apiService.resetGame({ playerName: this.playerName });
+            this.refreshWordList();
+          }
+        });
     },
     setScore: function(score) {
       this.score = score;

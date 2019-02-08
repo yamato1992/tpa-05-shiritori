@@ -97,6 +97,8 @@ export default {
           if (resp.success) {
             apiService.resetGame({ playerName: this.playerName });
             this.refreshWordList();
+          } else {
+            this.errorMessage = 'Faild to reset the game';
           }
         });
     },
